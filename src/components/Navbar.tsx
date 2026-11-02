@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   Navbar,
   NavbarBrand,
@@ -11,6 +11,7 @@ import {
 /* import { useBoundStore } from "../store/BoundStore/BoundedStore"; */
 
 export default function NavbarComp() {
+  const location = useLocation();
   return (
     <div className="text-3xl lg:text-2xl flex gap-2 bg-[#F1F4F7]">
       <>
@@ -19,9 +20,11 @@ export default function NavbarComp() {
             <NavbarMenuToggle className="sm:hidden" />
             <NavbarBrand className="flex gap-4">
               <img src="/cspLogo.png" alt="CSP LOGO" width={35} />
-              <p className="font-medium text-black text-xl flex justify-center items-center">
-                <Link to="/">PRESS SCOREBOARD</Link>
-              </p>
+              {location.pathname !== "/" && (
+                <p className="font-medium text-black text-xl flex justify-center items-center">
+                  <Link to="/">PRESS SCOREBOARD</Link>
+                </p>
+              )}
             </NavbarBrand>
           </NavbarContent>
 

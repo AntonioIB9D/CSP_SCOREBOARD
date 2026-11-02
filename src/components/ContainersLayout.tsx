@@ -67,13 +67,17 @@ export default function ContainersLayout({
                 <h1 className="text-6xl text-[#778995] font-medium">
                   SMC Vanwert
                 </h1>
-                <h1 className="text-9xl text-[#D57F43]">2</h1>
+                <h1 className="text-9xl text-[#D57F43]">
+                  {smcPressDataResult?.VanwertCount ?? "-"}
+                </h1>
               </div>
               <div className="bg-[#000000] p-4 rounded-2xl flex flex-col gap-4 justify-center items-center">
                 <h1 className="text-6xl text-[#778995] font-medium">
                   SMC Grabill
                 </h1>
-                <h1 className="text-9xl text-[#D57F43]">2</h1>
+                <h1 className="text-9xl text-[#D57F43]">
+                  {smcPressDataResult?.GrabillCount ?? "-"}
+                </h1>
               </div>
             </div>
           </div>
@@ -94,14 +98,14 @@ export default function ContainersLayout({
               <h2 className="text-4xl text-[#778995] font-medium">SMC A</h2>
               <i className="bi bi-upc-scan text-6xl"></i>
               <p className="text-4xl text-[#D57F43] font-medium">
-                {smcPressDataResult?.data[1]?.serie}
+                {smcPressDataResult?.data[1]?.serie ?? "No scan data"}
               </p>
             </div>
             <div className="bg-[#000000] p-4 rounded-2xl flex flex-col gap-4 justify-center items-center">
               <h2 className="text-4xl text-[#778995] font-medium">Vendor A</h2>
               <i className="bi bi-person-vcard text-6xl"></i>
               <p className="text-4xl text-[#D57F43] font-medium">
-                {smcPressDataResult?.data[1]?.supplierName}
+                {smcPressDataResult?.data[1]?.supplierName ?? "No scan data"}
               </p>
             </div>
             <div className="bg-[#000000] p-4 rounded-2xl flex flex-col gap-4 justify-center items-center">
@@ -110,7 +114,8 @@ export default function ContainersLayout({
                 Load Time A
               </h2>
               <p className="text-4xl text-[#D57F43] font-medium">
-                {smcPressDataResult?.data[1]?.fecha_hora.split(" ")[1]}
+                {smcPressDataResult?.data[1]?.fecha_hora.split(" ")[1] ??
+                  "No scan data"}
               </p>
             </div>
           </div>
@@ -119,14 +124,14 @@ export default function ContainersLayout({
               <h2 className="text-4xl text-[#778995] font-medium">SMC B</h2>
               <i className="bi bi-upc-scan text-6xl"></i>
               <p className="text-4xl text-[#D57F43] font-medium">
-                {smcPressDataResult?.data[0]?.serie}
+                {smcPressDataResult?.data[0]?.serie ?? "No scan data"}
               </p>
             </div>
             <div className="bg-[#000000] p-4 rounded-2xl flex flex-col gap-4 justify-center items-center">
               <h2 className="text-4xl text-[#778995] font-medium">Vendor B</h2>
               <i className="bi bi-person-vcard text-6xl"></i>
               <p className="text-4xl text-[#D57F43] font-medium">
-                {smcPressDataResult?.data[0]?.supplierName}
+                {smcPressDataResult?.data[0]?.supplierName ?? "No scan data"}
               </p>
             </div>
             <div className="bg-[#000000] p-4 rounded-2xl flex flex-col gap-4 justify-center items-center">
@@ -135,8 +140,8 @@ export default function ContainersLayout({
                 Load Time B
               </h2>
               <p className="text-4xl text-[#D57F43] font-medium">
-                {" "}
-                {smcPressDataResult?.data[0]?.fecha_hora.split(" ")[1]}
+                {smcPressDataResult?.data[0]?.fecha_hora.split(" ")[1] ??
+                  "No scan data"}
               </p>
             </div>
           </div>

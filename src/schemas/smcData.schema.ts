@@ -11,4 +11,6 @@ const result = z.object({
 
 export const smcData = z.object({
   data: z.array(result),
+  VanwertCount: z.number(),
+  GrabillCount: z.number(),
 });
